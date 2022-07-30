@@ -1,0 +1,20 @@
+  {% extends "layout.html" %}
+
+  {% block body %}
+      <h1>Astronauts</h1>
+      <h3>{{data[0]}} (Walked on moon?: {{data[1]["Moonwalker"]}})</h3>
+      <table>
+          <thead>
+              <tr>
+                  <th>Missions</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for entry in data[1]["Missions"] %}
+                  <tr>
+                      <td>{{ entry }}</td>
+                  </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+  {% endblock %}
